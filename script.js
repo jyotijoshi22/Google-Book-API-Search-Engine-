@@ -14,12 +14,12 @@ function populateData(obj) {
 
   for (const book of books) {
     const bookTitle = document.createElement("h1");
-    const bookImg = document.createElement("img");
+    //const bookImg = document.createElement("img");
     const bookAuthor = document.createElement("h3");
     const bookDesc = document.createElement("p");
 
-    bookImg.src = book.imageLinks;
-    img.setAttribute = bookTitle.textContent = book.volumeInfo.title;
+    // bookImg.src = book.imageLinks;
+    bookTitle.textContent = `Title: ${book.volumeInfo.title}`;
 
     const authorName = book.volumeInfo.authors;
     for (const author of authorName) {
@@ -28,12 +28,12 @@ function populateData(obj) {
       bookAuthor.appendChild(listItem);
     }
 
-    bookDesc.textContent = book.volumeInfo.description;
+    bookDesc.textContent = `Description:${book.volumeInfo.description}`;
 
-    section.appendChild(bookImg);
+    //section.appendChild(bookImg);
     section.appendChild(bookTitle);
-    section.appendChild(bookDesc);
     section.appendChild(bookAuthor);
+    section.appendChild(bookDesc);
   }
 }
 
