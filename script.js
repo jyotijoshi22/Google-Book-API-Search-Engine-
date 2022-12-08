@@ -13,13 +13,22 @@ function populateData(obj) {
   const books = obj.items;
 
   for (const book of books) {
+    const bookInfoContainer = document.createElement("div");
     const bookTitle = document.createElement("h1");
-    //const bookImg = document.createElement("img");
+    const bookImg = document.createElement("img");
     const bookAuthor = document.createElement("h3");
-    const bookDesc = document.createElement("p");
+    //const bookDesc = document.createElement("p");
 
-    // bookImg.src = book.imageLinks;
-    bookTitle.textContent = `Title: ${book.volumeInfo.title}`;
+    if (book.volumeInfo.imageLinks) {
+      bookImg.src = book.volumeInfo.imageLinks.thumbnail;
+      bookImg.alt = `Title: ${book.volumeInfo.title}`;
+      bookInfoContainer.appendChild(bookImg);
+    } else {
+      bookTitle.textContent = `Title: ${book.volumeInfo.title}`;
+      bookInfoContainer.appendChild(bookTitle);
+    }
+    //bookImg.src = book.volumnetInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail :  ;
+    //bookTitle.textContent = `Title: ${book.volumeInfo.title}`;
 
     const authorName = book.volumeInfo.authors;
     for (const author of authorName) {
@@ -28,12 +37,9 @@ function populateData(obj) {
       bookAuthor.appendChild(listItem);
     }
 
-    bookDesc.textContent = `Description:${book.volumeInfo.description}`;
-
-    //section.appendChild(bookImg);
-    section.appendChild(bookTitle);
-    section.appendChild(bookAuthor);
-    section.appendChild(bookDesc);
+    //bookDesc.textContent = `${book.volumeInfo.description}`;
+    bookInfoContainer.appendChild(bookAuthor);
+    section.appendChild(bookInfoContainer);
   }
 }
 
