@@ -17,6 +17,7 @@ function populateData(obj) {
     const bookTitle = document.createElement("h1");
     const bookImg = document.createElement("img");
     const bookAuthor = document.createElement("h3");
+    const moreInfoBtn = document.createElement("button");
     //const bookDesc = document.createElement("p");
 
     if (book.volumeInfo.imageLinks) {
@@ -27,6 +28,9 @@ function populateData(obj) {
       bookTitle.textContent = `Title: ${book.volumeInfo.title}`;
       bookInfoContainer.appendChild(bookTitle);
     }
+
+    moreInfoBtn.textContent = "MORE INFO";
+    moreInfoBtn.style.border = "none";
     //bookImg.src = book.volumnetInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail :  ;
     //bookTitle.textContent = `Title: ${book.volumeInfo.title}`;
 
@@ -39,6 +43,8 @@ function populateData(obj) {
 
     //bookDesc.textContent = `${book.volumeInfo.description}`;
     bookInfoContainer.appendChild(bookAuthor);
+    bookInfoContainer.appendChild(moreInfoBtn);
+
     section.appendChild(bookInfoContainer);
   }
 }
