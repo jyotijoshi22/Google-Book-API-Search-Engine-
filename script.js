@@ -42,8 +42,28 @@ function populateData(obj) {
 
     //bookDesc.textContent = `${book.volumeInfo.description}`;
     bookInfoContainer.appendChild(bookAuthor);
-
     section.appendChild(bookInfoContainer);
+
+    //Added code for Modal
+
+    //mainModal.style.display = "none";
+    bookInfoContainer.addEventListener("click", () => {
+      const mainModal = document.createElement("div");
+      mainModal.className = "addCSS";
+      //create some elements for inf we want to show
+      openModal(book, mainModal);
+      // console.log("Click EVENT CALLAE");
+      // const modalBookInfoContainer = document.createElement("div");
+      // const modalBookTitle = document.createElement("h1");
+
+      // console.log("MINeeee");
+
+      // modalBookTitle.textContent = book.volumeInfo.title;
+      // modalBookInfoContainer.appendChild(modalBookTitle);
+      // mainModal.appendChild(modalBookInfoContainer);
+      // mainModal.style.display = "flex";
+    });
+    //Added till here
   }
 }
 
