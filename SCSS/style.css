@@ -1,7 +1,8 @@
 .home {
-  background-image: url("./book.jfif");
+  background-image: url("../image/book.jfif");
+  object-fit: fill;
   width: 100%;
-  height: 50vh;
+  height: 60vh;
   display: flex;
   justify-content: center;
   flex-flow: column;
@@ -22,11 +23,10 @@
   margin: 0 auto;
   padding: 10px;
   width: 50%;
-  display: flex;
-  justify-content: center;
   box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.1);
 }
 .home__button {
+  position: relative;
   background-color: antiquewhite;
   height: 34px;
   width: 200px;
@@ -35,7 +35,7 @@
   font-weight: bold;
 }
 
-section {
+.mainContainer {
   border: 1px solid black;
   border-radius: 5px;
   box-shadow: 0px 5px 10px 5px rgba(255, 192, 203, 0.5);
@@ -45,13 +45,12 @@ section {
   flex-direction: row;
   flex-wrap: wrap;
 }
-
-section div {
-  border: 2px solid black;
-  margin: 4px;
-  padding: 5px;
-  border-radius: 4px;
-  height: 450px;
+.mainContainer__bookContainer {
+  border: 3px solid brown;
+  font-size: 0.7rem;
+  margin: 1px;
+  border-radius: 16px;
+  height: 400px;
   width: 250px;
   display: flex;
   flex-direction: column;
@@ -59,24 +58,51 @@ section div {
   justify-content: center;
   flex-wrap: wrap;
 }
-
-section h3 {
-  margin-left: 2px;
-  margin-top: 0px;
+.mainContainer__bookContainer__img {
+  margin: 0px;
+}
+.mainContainer__bookContainer__title {
+  margin: 0px;
+}
+.mainContainer__bookContainer__auth {
+  margin: 0px;
 }
 
-.addCSS {
-  display: block; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 2; /* Sit on top */
-  left: 0;
-  top: 0;
-  min-width: 100vw; /* Full width */
-  min-height: 100vh; /* Full height */
+.modal {
+  border: 4px solid black;
+  position: absolute; /* Stay in place */
+  margin: 0px;
+  padding-top: 100px;
+  z-index: 1; /* Sit on top */
+  left: 200px;
+  width: 70%;
+  height: 90%;
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0); /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  background-color: white; /* Fallback color */
+  display: none;
+}
+.modal__container {
+  margin: 1px;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
+}
+.modal__container__button {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+}
+.modal__container__button:hover {
+  cursor: pointer;
+}
+.modal__container__title {
+  margin: 0px;
+}
+.modal__container__subtitle {
+  padding: 0px;
+  margin-top: 0px;
+}
+.modal__container__desc {
+  margin: 0px;
 }
