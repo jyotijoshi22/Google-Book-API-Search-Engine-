@@ -3,13 +3,18 @@
   position: absolute; /* Stay in place */
   margin: 0px;
   padding-top: 100px;
+  // top: 50%;
+  // left: 50%;
   z-index: 1; /* Sit on top */
   left: 200px;
   width: 70%;
   height: 90%;
-  overflow: auto; /* Enable scroll if needed */
+  overflow: visible; /* Enable scroll if needed */
   background-color: white; /* Fallback color */
-  display: none;
+  //display: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &__container {
     margin: 1px;
@@ -17,6 +22,7 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    overflow: visible;
     &__button {
       display: flex;
       justify-content: flex-end;

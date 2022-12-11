@@ -1,13 +1,16 @@
 import { openModal } from "./modal.js";
 
 export function populateData(obj) {
+  //   const showResult = document.getElementById("showResult");
+  //   showResult.textContent = `Showing Result for${obj}`;
+
   const section = document.querySelector("section");
   const books = obj.items;
+
   section.className = "mainContainer";
 
   for (const book of books) {
     const bookInfoContainer = document.createElement("div");
-
     const bookTitle = document.createElement("h1");
     const bookImg = document.createElement("img");
     const bookAuthor = document.createElement("h3");
@@ -22,7 +25,7 @@ export function populateData(obj) {
       bookImg.alt = `Title: ${book.volumeInfo.title}`;
       bookInfoContainer.appendChild(bookImg);
     } else {
-      bookImg.src = "./image/defaultBook.png";
+      bookImg.src = "image/defaultBook.png";
       bookInfoContainer.appendChild(bookImg);
     }
 
