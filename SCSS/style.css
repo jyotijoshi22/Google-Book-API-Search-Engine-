@@ -36,12 +36,14 @@
 }
 
 .mainContainer {
-  border: 1px solid black;
+  border: 4px solid black;
+  position: absolute;
   border-radius: 5px;
   box-shadow: 0px 5px 10px 5px rgba(255, 192, 203, 0.5);
   transition: 0.5s;
   background-color: white;
   display: flex;
+  overflow: visible;
   flex-direction: row;
   flex-wrap: wrap;
 }
@@ -68,44 +70,37 @@
   margin: 0px;
 }
 
-.modal {
+.mainContainer__container {
   border: 4px solid black;
   position: absolute; /* Stay in place */
   margin: 0px;
-  padding-top: 100px;
-  z-index: 1; /* Sit on top */
+  padding-top: 10px;
+  z-index: 2; /* Sit on top */
   left: 200px;
   width: 70%;
-  height: 90%;
+  height: 40%;
   overflow: visible; /* Enable scroll if needed */
   background-color: white; /* Fallback color */
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.modal__container {
-  margin: 1px;
-  display: flex;
-  justify-content: center;
   flex-direction: column;
-  align-items: center;
-  overflow: visible;
 }
-.modal__container__button {
+.mainContainer__container__button {
   display: flex;
   justify-content: flex-end;
   flex-direction: row;
 }
-.modal__container__button:hover {
+.mainContainer__container__button:hover {
   cursor: pointer;
 }
-.modal__container__title {
+.mainContainer__container__title {
   margin: 0px;
 }
-.modal__container__subtitle {
+.mainContainer__container__subtitle {
   padding: 0px;
   margin-top: 0px;
 }
-.modal__container__desc {
+.mainContainer__container__desc {
   margin: 0px;
 }

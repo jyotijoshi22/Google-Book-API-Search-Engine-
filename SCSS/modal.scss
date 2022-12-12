@@ -1,28 +1,40 @@
-.modal {
-  border: 4px solid black;
-  position: absolute; /* Stay in place */
-  margin: 0px;
-  padding-top: 100px;
-  // top: 50%;
-  // left: 50%;
-  z-index: 1; /* Sit on top */
-  left: 200px;
-  width: 70%;
-  height: 90%;
-  overflow: visible; /* Enable scroll if needed */
-  background-color: white; /* Fallback color */
-  //display: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.mainContainer {
+  // border: 4px solid black;
+  // position: absolute; /* Stay in place */
+  // margin: 0px;
+  // padding-top: 100px;
+  // // top: 50%;
+  // // left: 50%;
+  // z-index: 1; /* Sit on top */
+  // left: 200px;
+  // width: 70%;
+  // height: 90%;
+  // overflow: visible; /* Enable scroll if needed */
+  // background-color: white; /* Fallback color */
+  // //display: none;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
 
   &__container {
-    margin: 1px;
+    border: 4px solid black;
+    position: absolute; /* Stay in place */
+    margin: 0px;
+    padding-top: 10px;
+    // top: 50%;
+    // left: 50%;
+    z-index: 2; /* Sit on top */
+    left: 200px;
+    width: 70%;
+    height: 40%;
+    overflow: visible; /* Enable scroll if needed */
+    background-color: white; /* Fallback color */
+    //display: none;
     display: flex;
     justify-content: center;
-    flex-direction: column;
     align-items: center;
-    overflow: visible;
+    flex-direction: column;
+
     &__button {
       display: flex;
       justify-content: flex-end;
