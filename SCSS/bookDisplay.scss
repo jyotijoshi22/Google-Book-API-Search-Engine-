@@ -11,6 +11,7 @@
   overflow: visible;
   flex-direction: row;
   flex-wrap: wrap;
+
   &__bookContainer {
     border: 3px solid brown;
     font-size: 0.7rem;
@@ -33,5 +34,22 @@
     &__auth {
       margin: 0px;
     }
+  }
+
+  &__next {
+    padding: 15px 32px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin: 10px 10vw;
+  }
+
+  &__prev {
+    padding: 15px 32px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin: 10px 10vw;
+    // pointer-events: none; will be using this  property to disable prev button when current page =1
   }
 }
