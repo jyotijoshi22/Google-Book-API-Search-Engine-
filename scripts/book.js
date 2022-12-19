@@ -1,9 +1,7 @@
 import { openModal } from "./modal.js";
+import { nextPage, backPage } from "./script.js";
 
 export function populateData(obj) {
-  //   const showResult = document.getElementById("showResult");
-  //   showResult.textContent = `Showing Result for${obj}`;
-
   const section = document.querySelector("section");
   const books = obj.items;
 
@@ -41,9 +39,31 @@ export function populateData(obj) {
     bookInfoContainer.appendChild(bookAuthor);
     section.appendChild(bookInfoContainer);
 
-    //Opens Modal
+    //OPENS MODAL
     bookInfoContainer.addEventListener("click", () => {
       openModal(book, section);
     });
   }
+  // NEXT AND PREVIOUS PAGE BUTTON IN SECTION. DISPLAY PER PAGE HAS BEEN SET  TO 20;
+  const nextPageBtn = document.createElement("button");
+  const prevPageBtn = document.createElement("button");
+
+  nextPageBtn.className = "mainContainer__next";
+  prevPageBtn.className = "mainContainer__prev";
+
+  nextPageBtn.innerHTML = "NEXT";
+  prevPageBtn.innerHTML = "PREVIOUS";
+
+  nextPageBtn.addEventListener("click", () => {
+    section.innerHTML = ""; //removes the previous  book grid
+    nextPage();
+  });
+
+  prevPageBtn.addEventListener("click", () => {
+    section.innerHTML = ""; //removes the previous grid
+    backPage();
+  });
+
+  section.appendChild(prevPageBtn);
+  section.appendChild(nextPageBtn);
 }

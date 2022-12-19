@@ -1,17 +1,8 @@
 export function openModal(book, section) {
-  const mainModal = document.createElement("div");
-  mainModal.className = "modal";
-
-  //const nav = document.createElement("nav");
   const modalClose = document.createElement("button");
   modalClose.textContent = "X";
 
-  //mainModal.appendChild(nav);
-
-  modalClose.addEventListener("click", () => {
-    mainModal.style.display = "none";
-  });
-
+  //Creating Elements for MODAL CONTAINER
   const modalBookInfoContainer = document.createElement("div");
   const modalBookTitle = document.createElement("h4");
   const modalSubtitle = document.createElement("h4");
@@ -19,20 +10,27 @@ export function openModal(book, section) {
   const modalAuthor = document.createElement("h4");
   const modalDes = document.createElement("p");
 
-  //Classes assigned to HTML tags
-  modalBookInfoContainer.className = "modal__container";
-  modalClose.className = "modal__container__button";
-  modalBookTitle.className = "modal__container__title";
-  modalSubtitle.className = "modal__container__subtitle";
-  modalImage.className = "modal__container__img";
-  modalDes.className = "modal__container__desc";
+  modalClose.addEventListener("click", () => {
+    modalBookInfoContainer.style.display = "none";
+  });
+
+  //ASSINGNING CLASSES TO ELEMENTS
+  modalBookInfoContainer.className = "mainContainer__container";
+  modalClose.className = "mainContainer__container__button";
+  modalBookTitle.className = "mainContainer__container__title";
+  modalSubtitle.className = "mainContainer__container__subtitle";
+  modalImage.className = "mainContainer__container__img";
+  modalDes.className = "mainContainer__container__desc";
 
   //Adding content to modal
   modalBookInfoContainer.appendChild(modalClose);
   modalBookTitle.textContent = book.volumeInfo.title;
   modalSubtitle.textContent = book.volumeInfo.subtitle;
-  modalImage.src = book.volumeInfo.imageLinks.thumbnail;
-  const modalAuthorName = book.volumeInfo.authors;
+  modalImage.src = book.volumeInfo.imageLinks
+    ? book.volumeInfo.imageLinks.thumbnail
+    : "./image/defaultBook.png";
+
+  const modalAuthorName = book.volumeInfo.authors; //authors are more than one
   for (const author of modalAuthorName) {
     const listItem = document.createElement("h4");
     listItem.textContent = author;
@@ -47,10 +45,7 @@ export function openModal(book, section) {
   modalBookInfoContainer.appendChild(modalAuthor);
   modalBookInfoContainer.appendChild(modalDes);
 
-  //append to mainmodal
-  mainModal.appendChild(modalBookInfoContainer);
+  modalBookInfoContainer.style.display = "flex";
 
-  mainModal.style.display = "flex";
-
-  section.appendChild(mainModal);
+  section.appendChild(modalBookInfoContainer);
 }
