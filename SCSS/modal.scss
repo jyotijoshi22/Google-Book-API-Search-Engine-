@@ -1,0 +1,42 @@
+.mainContainer {
+  &__container {
+    border: 4px solid black;
+    position: fixed; /* Stay in place */
+    margin: 0px;
+    padding-top: 20px;
+
+    z-index: 1; /* Sit on top */
+    left: 20%;
+    top: 5%;
+    width: 70%;
+    height: 90%;
+    overflow: visible; /* Enable scroll if needed */
+    background-color: white; /* Fallback color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    &__button {
+      display: flex;
+      justify-content: flex-end;
+      flex-direction: row;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &__title {
+      margin: 0px;
+    }
+
+    &__subtitle {
+      padding: 0px;
+      margin-top: 0px;
+    }
+
+    &__desc {
+      margin: 0px;
+    }
+  }
+}
